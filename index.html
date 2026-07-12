@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div class="logo-box">
+    <img src="logo.png" alt="ALI GAMER TECH Logo" class="logo">
+    <h1>ALI GAMER TECH</h1>
+</div>
+<link rel="stylesheet" href="style.css">
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#0d0d0d;
+color:white;
+}
+
+header{
+background:#ff0000;
+padding:20px;
+text-align:center;
+}
+
+header h1{
+font-size:40px;
+}
+
+nav{
+margin-top:15px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:10px;
+font-size:18px;
+}
+
+.hero{
+padding:80px 20px;
+text-align:center;
+background:linear-gradient(to right,#111,#222);
+}
+
+.hero h2{
+font-size:45px;
+}
+
+.hero p{
+margin-top:15px;
+font-size:20px;
+}
+
+.btn{
+display:inline-block;
+margin-top:25px;
+padding:15px 30px;
+background:#00c853;
+color:white;
+text-decoration:none;
+border-radius:10px;
+font-size:20px;
+}
+
+.section{
+padding:50px 20px;
+text-align:center;
+}
+
+.cards{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+margin-top:30px;
+}
+
+.card{
+background:#1b1b1b;
+padding:20px;
+width:250px;
+border-radius:15px;
+}
+
+.card h3{
+margin-bottom:10px;
+}
+
+footer{
+background:#111;
+padding:20px;
+text-align:center;
+margin-top:30px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🎮 ALI GAMER TECH 🎮</h1>
+
+<nav>
+<a href="#">Home</a>
+<a href="#">Games</a>
+<a href="#">Videos</a>
+<a href="#">About</a>
+<a href="#">Contact</a>
+</nav>
+
+</header>
+
+<section class="hero">
+<h2>Welcome Gamers!</h2>
+
+<p>Free Fire • Minecraft • GTA • Granny • Gaming Tutorials</p>
+
+<a class="btn"
+href="https://youtube.com/@aligamertech-vt5gu?si=zm_sMDsWU4JrNns4"
+target="_blank">
+Subscribe on YouTube
+</a>
+
+</section>
+
+<section class="section">
+
+<h2>Popular Games</h2>
+
+<div class="cards">
+
+<a href="freefire.html" class="card">
+<h3>🔥 Free Fire</h3>
+<p>Gameplay, Live Streams & Rank Push.</p>
+</a>
+
+<a href="minecraft.html" class="card">
+<h3>⛏️ Minecraft</h3>
+<p>Survival, Mods & Adventures.</p>
+</a> 
+<a href="gta.html" class="card">
+<h3>🚗 GTA San Andreas</h3>
+<p>Missions, Mods & Gameplay.</p>
+</a>
+
+<a href="granny.html" class="card">
+<h3>👻 Granny</h3>
+<p>Horror Escape & Challenges.</p>
+</a>
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>About ALI GAMER TECH</h2>
+
+<p>
+Welcome to ALI GAMER TECH.
+Here you will find Gaming Videos,
+Live Streams,
+Tutorials,
+Mods,
+Tips and Tricks.
+</p>
+
+</section>
+
+<footer>
+
+<p>© 2026 ALI GAMER TECH | All Rights Reserved</p>
+
+</footer>
+<script>
+// Dark Mode
+const darkBtn = document.createElement("button");
+darkBtn.innerText = "🌙 Dark Mode";
+darkBtn.style.position = "fixed";
+darkBtn.style.top = "15px";
+darkBtn.style.right = "15px";
+darkBtn.style.padding = "10px 15px";
+darkBtn.style.border = "none";
+darkBtn.style.borderRadius = "8px";
+darkBtn.style.cursor = "pointer";
+darkBtn.style.zIndex = "1000";
+document.body.appendChild(darkBtn);
+
+let dark = true;
+
+darkBtn.onclick = function () {
+    if (dark) {
+        document.body.style.background = "#ffffff";
+        document.body.style.color = "#000000";
+        darkBtn.innerText = "☀ Light Mode";
+    } else {
+        document.body.style.background = "#0d0d0d";
+        document.body.style.color = "#ffffff";
+        darkBtn.innerText = "🌙 Dark Mode";
+    }
+    dark = !dark;
+};
+
+// Back To Top Button
+const topBtn = document.createElement("button");
+topBtn.innerText = "⬆ Top";
+topBtn.style.position = "fixed";
+topBtn.style.bottom = "20px";
+topBtn.style.right = "20px";
+topBtn.style.padding = "10px 15px";
+topBtn.style.border = "none";
+topBtn.style.borderRadius = "8px";
+topBtn.style.cursor = "pointer";
+topBtn.style.display = "none";
+document.body.appendChild(topBtn);
+
+window.onscroll = function () {
+    if (document.documentElement.scrollTop > 200) {
+        topBtn.style.display = "block";
+    } else {
+        topBtn.style.display = "none";
+    }
+};
+
+topBtn.onclick = function () {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+};
+
+// Welcome Message
+window.onload = function () {
+    alert("🎮 Welcome to ALI GAMER TECH Website!");
+};
+
+// Search Box
+const search = document.createElement("input");
+search.placeholder = "🔍 Search Games...";
+search.style.display = "block";
+search.style.margin = "20px auto";
+search.style.padding = "12px";
+search.style.width = "80%";
+search.style.maxWidth = "400px";
+search.style.borderRadius = "10px";
+search.style.border = "none";
+
+document.body.insertBefore(search, document.body.children[1]);
+
+search.addEventListener("keyup", function () {
+    let value = this.value.toLowerCase();
+    let cards = document.querySelectorAll(".card");
+
+    cards.forEach(card => {
+        if (card.innerText.toLowerCase().includes(value)) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+});
+</script>
+<script src="script.js"></script>
+</body>
+</html>

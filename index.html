@@ -40,11 +40,25 @@ nav{
 margin-top:15px;
 }
 
+nav{
+margin-top:15px;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
 nav a{
 color:white;
 text-decoration:none;
 margin:10px;
 font-size:18px;
+padding:8px 12px;
+border-radius:8px;
+transition:0.3s;
+}
+
+nav a:hover{
+background:#00c853;
 }
 
 .hero{
@@ -85,16 +99,20 @@ justify-content:center;
 gap:20px;
 margin-top:30px;
 }
-
 .card{
 background:#1b1b1b;
 padding:20px;
 width:250px;
 border-radius:15px;
+text-decoration:none;
+color:white;
+transition:0.3s;
+cursor:pointer;
 }
 
-.card h3{
-margin-bottom:10px;
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 20px #ff0000;
 }
 
 footer{
@@ -107,6 +125,7 @@ margin-top:30px;
 background:linear-gradient(135deg,#111,#1f1f1f,#ff0000);
 padding:100px 20px;
 text-align:center;
+border-bottom:3px solid red;
 }
 
 .hero h2{
@@ -220,9 +239,15 @@ Tips and Tricks.
     </a>
 </section>
 <footer>
-
 <p>© 2026 ALI GAMER TECH | All Rights Reserved</p>
 
+<p>🎮 Free Fire • Minecraft • GTA • Granny</p>
+
+<p>
+<a href="https://youtube.com/@aligamertech-vt5gu" target="_blank" style="color:#00c853; text-decoration:none;">
+▶ Subscribe on YouTube
+</a>
+</p>
 </footer>
 <script>
 // Dark Mode

@@ -335,17 +335,26 @@ search.style.border = "none";
 
 document.body.insertBefore(search, document.body.children[1]);
 
-search.addEventListener("keyup", function () {
-    let value = this.value.toLowerCase();
-    let cards = document.querySelectorAll(".card");
+search.addEventListener("keydown", function(e) {
+    if (e.key === "Enter") {
+        let value = this.value.toLowerCase().trim();
 
-    cards.forEach(card => {
-        if (card.innerText.toLowerCase().includes(value)) {
-            card.style.display = "block";
+        if (value.includes("free fire") || value === "ff") {
+            window.location.href = "freefire.html";
+        } else if (value.includes("minecraft")) {
+            window.location.href = "minecraft.html";
+        } else if (value.includes("gta")) {
+            window.location.href = "gta.html";
+        } else if (value.includes("granny")) {
+            window.location.href = "granny.html";
+        } else if (value.includes("about")) {
+            window.location.href = "about.html";
+        } else if (value.includes("contact")) {
+            window.location.href = "contact.html";
         } else {
-            card.style.display = "none";
+            alert("No page found!");
         }
-    });
+    }
 });
 </script>
 <script src="script.js"></script>

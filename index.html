@@ -38,10 +38,6 @@ font-size:40px;
 
 nav{
 margin-top:15px;
-}
-
-nav{
-margin-top:15px;
 position:sticky;
 top:0;
 z-index:1000;
@@ -335,24 +331,34 @@ search.style.border = "none";
 
 document.body.insertBefore(search, document.body.children[1]);
 
-search.addEventListener("keydown", function(e) {
+    
+       
+  search.addEventListener("keydown", function(e) {
     if (e.key === "Enter") {
         let value = this.value.toLowerCase().trim();
 
-        if (value.includes("free fire") || value === "ff") {
+        if (value === "home") {
+            window.location.href = "index.html";
+        } else if (value === "games") {
+            document.getElementById("games").scrollIntoView({
+                behavior: "smooth"
+            });
+        } else if (value === "videos" || value === "video") {
+            window.open("https://youtube.com/@aligamertech-vt5gu", "_blank");
+        } else if (value.includes("free fire") || value === "ff") {
             window.location.href = "freefire.html";
-        } else if (value.includes("minecraft")) {
+        } else if (value === "minecraft") {
             window.location.href = "minecraft.html";
-        } else if (value.includes("gta")) {
+        } else if (value === "gta") {
             window.location.href = "gta.html";
-        } else if (value.includes("granny")) {
+        } else if (value === "granny") {
             window.location.href = "granny.html";
-        } else if (value.includes("about")) {
+        } else if (value === "about") {
             window.location.href = "about.html";
-        } else if (value.includes("contact")) {
+        } else if (value === "contact") {
             window.location.href = "contact.html";
         } else {
-            alert("No page found!");
+            alert("Page not found!");
         }
     }
 });

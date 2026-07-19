@@ -32,5 +32,27 @@ topButton.onclick = function () {
     window.scrollTo({
         top: 0,
         behavior: "smooth"
+
+const API_KEY = "AIzaSyDcuZmtwU_a1YSj37x4OScn5apv9rE20Lk";
+const CHANNEL_ID = "UCrOv0_PuC-pBDbpKlcFEvIA";
+
+fetch(`https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&order=date&maxResults=6`)
+.then(response => response.json())
+.then(data => {
+    let videos = "";
+
+    data.items.forEach(video => {
+        if (video.id.videoId) {
+            videos += `
+            <div>
+                <h3>${video.snippet.title}</h3>
+                <iframe width="300" height="170"
+                src="https://www.youtube.com/embed/${video.id.videoId}"
+                frameborder="0" allowfullscreen>
+                </iframe>
+            </div>`;
+        }
     });
-};
+
+    document.getElementById("videos").innerHTML = videos;
+});
